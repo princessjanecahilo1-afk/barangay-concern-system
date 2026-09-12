@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Concern Reporting System - Pinagturilan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>🏘️ Barangay Pinagturilan</h1>
+                <p>Concern Reporting System</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#report">Report Concern</a></li>
+                <li><a href="#status">Check Status</a></li>
+                <li><a href="#admin">Admin Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Report Your Barangay Concerns</h2>
+            <p>Help us make Pinagturilan a better community. Submit your concerns and track their progress.</p>
+            <button class="btn btn-primary" onclick="scrollToReport()">Submit a Concern</button>
+        </div>
+    </section>
+
+    <section id="report" class="report-section">
+        <div class="container">
+            <h2>Submit Your Concern</h2>
+            <form id="concernForm" class="form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Contact Number *</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email (Optional)</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Concern Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">-- Select a Category --</option>
+                        <option value="road-damage">Damaged Roads</option>
+                        <option value="streetlights">Lack of Streetlights</option>
+                        <option value="water">Water Problem</option>
+                        <option value="flooding">Flooding</option>
+                        <option value="stray-animals">Stray Animals</option>
+                        <option value="noise">Noise Complaints</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location/Address *</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Purok 1, near the school" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description of Concern *</label>
+                    <textarea id="description" name="description" rows="5" placeholder="Describe your concern in detail..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority Level (Optional)</label>
+                    <select id="priority" name="priority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Concern</button>
+            </form>
+            <div id="successMessage" class="success-message" style="display:none;">
+                ✓ Your concern has been submitted successfully!
+            </div>
+        </div>
+    </section>
+
+    <section id="status" class="status-section">
+        <div class="container">
+            <h2>Check Concern Status</h2>
+            <div class="status-search">
+                <input type="text" id="searchId" placeholder="Enter your Concern ID">
+                <button class="btn btn-secondary" onclick="searchConcern()">Search</button>
+            </div>
+            <div id="statusResult" class="status-result"></div>
+        </div>
+    </section>
+
+    <section id="admin" class="admin-section">
+        <div class="container">
+            <h2>Admin Dashboard</h2>
+            <button class="btn btn-primary" onclick="goToAdmin()">Go to Admin Portal</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Barangay Pinagturilan Concern Reporting System | BSIT 1-E Project</p>
+        <p>Developed by: Princess Jane Cahilo, Jerlynn Tangilon, Randolf Serra</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
